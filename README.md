@@ -1,62 +1,70 @@
 # 🧱 Dev Stack Builder
 
-A responsive React website that allows developers to explore modern technologies and build their own development stack.
+A responsive React website for exploring development technologies and building a personal technology stack. The interface follows the supplied Dev Stack design while adding functional stack management, responsive navigation, loading feedback, and toast notifications.
 
-## Technologies Used
-
+## ✨ Technologies Used
 - React.js
 - Vite
-- JavaScript ES6+
+- JavaScript (ES6+)
 - CSS3
 - JSON
-- React Toastify
+- React-Toastify
 - Lucide React
 
-## Features
+## 🚀 Features
+1. **Technology Explorer** — loads 12 technologies from a JSON data file and presents them in responsive cards.
+2. **Your Stack Builder** — add/remove technologies, prevent duplicate additions, and clear the complete stack.
+3. **Responsive UI** — desktop, tablet, and mobile layouts with a mobile hamburger navigation.
 
-### 1. Technology Explorer
-Browse modern frontend, backend, database, language, styling, and DevOps technologies loaded from a JSON file.
+## 📁 Project Structure
+```text
+src/
+├── components/
+│   ├── Footer.jsx
+│   ├── Hero.jsx
+│   ├── Navbar.jsx
+│   ├── StackSidebar.jsx
+│   └── TechnologyCard.jsx
+├── data/
+│   └── technologies.json
+├── main.jsx
+└── styles.css
+```
 
-### 2. Stack Builder
-Add technologies to your personal stack, remove individual technologies, and clear the complete stack.
-
-### 3. Responsive Design
-The website works across desktop, tablet, and mobile devices with a responsive navigation menu.
-
-## How to Run
-
+## ▶️ Run Locally
 ```bash
 npm install
 npm run dev
+```
 
+For a production build:
+```bash
+npm run build
+```
 
+## 🧠 React Questions
 
+### 1. What is JSX, and why is it used in React?
+JSX is a syntax that lets us write HTML-like UI inside JavaScript. React uses it to make component structure easier to read and maintain.
 
-React Questions
-1. What is JSX, and why is it used in React?
+### 2. What is the difference between props and state?
+Props are values passed from a parent component to a child and should be treated as read-only. State is data owned by a component that can change and cause the UI to update.
 
-JSX is a syntax that allows us to write HTML-like code inside JavaScript. It makes React components easier to read and write.
+### 3. What does the `useState` hook do, and where did you use it in this project?
+`useState` creates state variables and a function to update them. This project uses it for the loaded technology list, loading state, selected stack, and mobile menu state.
 
-2. What is the difference between props and state?
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+`useEffect` runs side effects after rendering. It is used here to request the JSON data when the application first loads and then update the technology list.
 
-Props are data passed from a parent component to a child component. State is data managed inside a component that can change over time.
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
+React uses the key to identify which list item changed, was added, or was removed. A stable unique key helps React update the DOM efficiently and correctly.
 
-3. What does useState do, and where did you use it?
+### 6. What is conditional rendering? Show one place you used it.
+Conditional rendering means showing different UI depending on a condition. In the stack sidebar, an empty-stack message is shown when `stack.length === 0`; otherwise the selected technologies are displayed.
 
-useState creates and manages changing data in a React component. I used it for the technology list, selected stack, loading state, and mobile menu.
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+A parent passes data through props. A child can send information back by calling a callback function that the parent passed as a prop. For example, `TechnologyCard` receives `onAdd` and calls it when the user clicks **Add to Stack**.
 
-4. What does useEffect do, and why did you need it?
-
-useEffect is used for side effects such as fetching data. I used it to load the technology data from the JSON file when the application starts.
-
-5. Why does every item in a map list need a unique key?
-
-React uses the key to identify each item in a list. It helps React efficiently determine which items have changed.
-
-6. What is conditional rendering?
-
-Conditional rendering means showing different UI depending on a condition. I used it to display either the empty stack message or the selected technologies.
-
-7. How do you pass data between parent and child components?
-
-A parent passes data to a child using props. A child can communicate back by calling a function passed by the parent as a prop.
+## 📌 Submission
+- GitHub Repository Link: _Add after publishing your repository_
+- Live Site Link: _Add after deploying your site_

@@ -10,11 +10,10 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-toastify": "latest",
-    "lucide-react": "latest"
-  },
-  "devDependencies": {}
+    "react-toastify": "^11.1.0",
+    "vite": "latest"
+  }
 }

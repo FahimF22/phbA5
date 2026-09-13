@@ -1,14 +1,23 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { createRoot } from "react-dom/client";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 import "./styles.css";
 
-import { createRoot } from "react-dom/client";
-
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div>
-      <h1>Dev Stack Builder</h1>
-    </div>
+    <>
+      <Navbar
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
+
+      <main>
+        <Hero />
+      </main>
+    </>
   );
 }
 
